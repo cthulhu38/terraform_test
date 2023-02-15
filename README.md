@@ -1,5 +1,9 @@
 # terraform_test
 
-Dans cette branch je reste sur une utilisation de Terraform "Classique"
+J'ai galéré sur : 
 
-Je n'utilise pas de variables
+# Terraform.tfvars :
+    Il faut que le fichier s'appel comme ça obligatoirement !! 
+    Sinon, il faut l'appeler toto.auto.tfvars (pas encore essayé)
+    Ou encore, il faut changer le plan en indiquant : terraform plan -var-file="toto.tfvars" 
+        Remarque : ça marche avec env\*.tfvars ?? (A tester !!)

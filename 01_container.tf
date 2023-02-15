@@ -1,7 +1,13 @@
 # Create a container
 resource "docker_container" "foo" {
-  image = docker_image.debian.image_id
-  name  = "foo"
+  for_each = var.containeru
+
+  image    = docker_image.debian.image_id
+  name     = each.key
+  hostname = each.value.hostname
+
+# Pour "tenir" éveiller mon container je passe les commandes suivantes
+# ... sinon elle se kill toute seule ... 
   command = [
     "tail",
     "-f",
