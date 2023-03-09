@@ -6,8 +6,8 @@ resource "docker_container" "foo" {
   name     = each.key
   hostname = each.value.hostname
 
-# Pour "tenir" éveiller mon container je passe les commandes suivantes
-# ... sinon elle se kill toute seule ... 
+  # Pour "tenir" éveiller mon container je passe les commandes suivantes
+  # ... sinon elle se kill toute seule ... 
   command = [
     "tail",
     "-f",

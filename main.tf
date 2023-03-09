@@ -10,8 +10,22 @@ terraform {
 }
 
 provider "docker" {
-  host = "tcp://localhost:2375"
+  # Pour Linux :
+  # Attention, lancer les commandes TF en sudoer
+  host = "unix:///var/run/docker.sock"
 }
+
+#####
+#
+# Provider Docker pour Windows :
+#
+#####
+
+#  provider "docker" {
+#   host = "tcp://localhost:2375"
+# }
+
+#####
 
 # Pour réaliser un test des variables ... 
 #output "test_output" {
